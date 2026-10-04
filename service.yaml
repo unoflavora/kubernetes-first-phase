@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2026-09-27T08:50:18Z"
+  labels:
+    app: sample-app
+  name: sample-app
+  namespace: app
+  resourceVersion: "2638"
+  uid: 97f8eed4-a10e-4ddb-9a06-5b656a6875a9
+spec:
+  clusterIP: 10.96.13.132
+  clusterIPs:
+    - 10.96.13.132
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+    - nodePort: 30223
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: sample-app
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
